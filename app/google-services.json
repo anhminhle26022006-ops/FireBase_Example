@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "170154713442",
+    "project_id": "contactcloud-ef36a",
+    "storage_bucket": "contactcloud-ef36a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170154713442:android:efc84678d64e26de300c3b",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP4qpe9mI10gdkR5Uf2P3ACzTaN4vbavk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170154713442:android:5573f4db3e941171300c3b",
+        "android_client_info": {
+          "package_name": "com.example.lab9"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP4qpe9mI10gdkR5Uf2P3ACzTaN4vbavk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170154713442:android:c4879faff39725f2300c3b",
+        "android_client_info": {
+          "package_name": "vn.edu.ueh.thanhdnh.firebase_example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP4qpe9mI10gdkR5Uf2P3ACzTaN4vbavk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
