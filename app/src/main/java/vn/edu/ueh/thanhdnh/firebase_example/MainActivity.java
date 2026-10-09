@@ -15,10 +15,13 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
   FirebaseFirestore db;
   Button btAdd, btShow;
-  EditText etName, etPhone;
+  EditText etTitle, etContent, etImageUrl;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     FirebaseApp.initializeApp(this);
     db = FirebaseFirestore.getInstance();
+
     btAdd = findViewById(R.id.btAdd);
     btShow = findViewById(R.id.btShow);
-    etName = findViewById(R.id.etName);
-    etPhone = findViewById(R.id.etPhone);
+    etTitle = findViewById(R.id.etTitle);
+    etContent = findViewById(R.id.etContent);
+    etImageUrl = findViewById(R.id.etImageUrl);
+
     btAdd.setOnClickListener(this);
     btShow.setOnClickListener(this);
   }
@@ -44,9 +50,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   @Override
   public void onClick(View view) {
     if (view.getId() == R.id.btAdd) {
-      db.collection("users").add(new User(etName.getText().toString(), etPhone.getText().toString()));
-      etName.setText("");
-      etPhone.setText("");
+      // Firestore tự tạo ID cho document
+      Map<String, Object> articleData = new HashMap<>();
+      articleData.put("title", etTitle.getText().toString());
+      articleData.put("content", etContent.getText().toString());
+      articleData.put("imageUrl", etImageUrl.getText().toString());
+
+      db.collection("articles").add(articleData);
+
+      etTitle.setText("");
+      etContent.setText("");
+      etImageUrl.setText("");
     } else if (view.getId() == R.id.btShow) {
       Intent intent = new Intent(getBaseContext(), ShowDataActivity.class);
       startActivity(intent);
